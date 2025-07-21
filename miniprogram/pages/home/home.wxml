@@ -1,0 +1,168 @@
+<!-- 这个页面时首页页面，显示所有已经登录的用户 -->
+<block wx:if="{{done==false}}">
+  <view class="loading-container">
+    <image class="loading-gif" src="../../icons/spinner.gif" mode="aspectFit" />
+  </view>
+
+</block>
+<block wx:if="{{done==true}}">
+  <image class="background-image" src="../../icons/background.jpg" mode="aspectFill"></image>
+  <view class="page-container">
+    <view class="search_input" style="position: fixed; width:735rpx">
+      <navigator url="../../pages/search/search" open-type="navigate">{{text.search}}</navigator>
+      <view class="tabs_title">
+        <block wx:for="{{tabs}}" wx:key="index">
+          <Tabs tabs="{{tabs}}" binditemChange="handleItemChange" class="test"></Tabs>
+        </block>
+      </view>
+      <text decode="{{true}}">&nbsp;</text>
+    </view>
+    <text decode="{{true}}">&nbsp;</text>
+    <text decode="{{true}}">&nbsp;</text>
+    <text decode="{{true}}">&nbsp;</text>
+
+    <scroll-view class="scroll-container" scroll-y="true" style="height: 90vh; margin-top: 10vh;">
+
+      <block wx:if="{{tabs[0].isActive}}">
+
+        <view wx:for="{{dataobjWithoutPartner}}" wx:key="_openid">
+          <view class="first_tab">
+            <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+              <view class="dancerImage">
+                <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+                <view class="noPartner">暂无舞伴</view>
+              </view>
+              <view class="dancerInfo">
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="dancerName">姓名：{{item.name}}</view>
+                <view class="dancerGender">性别：{{item.gender}}</view>
+                <view class="dancerSchool">学校学院：{{item.school}}</view>
+                <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+                <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                <text decode="{{true}}">&nbsp;</text>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+            </navigator>
+          </view>
+        </view>
+
+        <view wx:for="{{dataobjWithPartner}}" wx:key="_openid">
+          <view class="first_tab">
+            <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+              <view class="dancerImage">
+                <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+                <view class="hasPartner">已有舞伴</view>
+              </view>
+              <view class="dancerInfo">
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="dancerName">姓名：{{item.name}}</view>
+                <view class="dancerGender">性别：{{item.gender}}</view>
+                <view class="dancerSchool">学校学院：{{item.school}}</view>
+                <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+                <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                <text decode="{{true}}">&nbsp;</text>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+            </navigator>
+          </view>
+        </view>
+      </block>
+
+
+      <block wx:elif="{{tabs[1].isActive}}">
+
+        <view wx:for="{{dataobjWithoutPartner}}" wx:if="{{item.gender=='男'}}" wx:key="_openid">
+          <view class="first_tab">
+            <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+              <view class="dancerImage">
+                <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+                <view class="noPartner">暂无舞伴</view>
+              </view>
+              <view class="dancerInfo">
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="dancerName">姓名：{{item.name}}</view>
+                <view class="dancerGender">性别：{{item.gender}}</view>
+                <view class="dancerSchool">学校学院：{{item.school}}</view>
+                <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+                <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                <text decode="{{true}}">&nbsp;</text>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+            </navigator>
+          </view>
+        </view>
+
+        <view wx:for="{{dataobjWithPartner}}" wx:if="{{item.gender=='男'}}" wx:key="_openid">
+          <view class="first_tab">
+            <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+              <view class="dancerImage">
+                <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+                <view class="hasPartner">已有舞伴</view>
+              </view>
+              <view class="dancerInfo">
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="dancerName">{{text.name}}：{{item.name}}</view>
+                <view class="dancerGender">{{text.gender}}：{{item.gender}}</view>
+                <view class="dancerSchool">{{text.school}}：{{item.school}}</view>
+                <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+                <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                <text decode="{{true}}">&nbsp;</text>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+            </navigator>
+          </view>
+        </view>
+      </block>
+
+
+      <block wx:elif="{{tabs[2].isActive}}">
+
+        <view wx:for="{{dataobjWithoutPartner}}" wx:if="{{item.gender=='女'}}" wx:key="_openid">
+          <view class="first_tab">
+            <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+              <view class="dancerImage">
+                <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+                <view class="noPartner">暂无舞伴</view>
+              </view>
+              <view class="dancerInfo">
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="dancerName">姓名：{{item.name}}</view>
+                <view class="dancerGender">性别：{{item.gender}}</view>
+                <view class="dancerSchool">学校学院：{{item.school}}</view>
+                <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+                <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                <text decode="{{true}}">&nbsp;</text>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+            </navigator>
+          </view>
+        </view>
+
+        <view wx:for="{{dataobjWithPartner}}" wx:if="{{item.gender=='女'}}" wx:key="_openid">
+          <view class="first_tab">
+            <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+              <view class="dancerImage">
+                <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+                <view class="hasPartner">已有舞伴</view>
+              </view>
+              <view class="dancerInfo">
+                <text decode="{{true}}">&nbsp;</text>
+                <view class="dancerName">姓名：{{item.name}}</view>
+                <view class="dancerGender">性别：{{item.gender}}</view>
+                <view class="dancerSchool">学校学院：{{item.school}}</view>
+                <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+                <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                <text decode="{{true}}">&nbsp;</text>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+            </navigator>
+          </view>
+        </view>
+
+      </block>
+    </scroll-view>
+    <view class="backgroundImage"/>
+  </view>
+
+</block>
+

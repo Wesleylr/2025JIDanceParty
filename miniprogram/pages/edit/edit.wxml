@@ -1,0 +1,73 @@
+<!-- edit页面时点入个人界面后点击编辑个人信息跳出的页面 -->
+<block wx:if="{{done==false}}">
+  <view class="tips">加载中</view>
+</block>
+<block wx:if="{{done==true}}">
+  <view data-weui-theme="{{theme}}">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    <view class="avatar_submit">轻触上传头像</view>
+    <view class="avatar_submit2">若头像未更新，刷新即可</view>
+   
+  </button> 
+  </view>
+<view class="all" >
+  <view class="top">
+    <!-- <view class="topshowimage">
+          <image class="user_icon" src="{{dataobj.image}}"></image>
+    </view> -->
+    <view class="topshowdetail">
+          <text decode="{{true}}">&nbsp;</text> 
+          <text decode="{{true}}">&nbsp;</text>
+    </view>
+  </view>
+<form class="form" bindsubmit="btnSub">
+    <text decode="{{true}}">&nbsp;</text>
+    <view class="userinformation">
+            <view class="item">
+              <view class="itemdetail">昵称:</view>
+            </view>
+            <view class="content1">
+            <input name="editnickname" wx:if="{{dataobj.nickname!=''}}" value="{{dataobj.nickname}}" bindinput="inputnickname"placeholder="还未填写" class="text2"></input>
+            <input name="editnickname" wx:if="{{dataobj.nickname==''}}" placeholder="还未填写" bindinput="inputnickname" class="text2"></input>
+            </view>
+  </view>
+    <view class="userinformation">
+            <view class="item">
+              <view class="itemdetail">年级:</view>
+            </view>
+            <view class="content1">
+            <input name="editgrade" wx:if="{{dataobj.grade!=''}}" value="{{dataobj.grade}}" class="text2"></input>
+            <input name="editgrade" wx:if="{{dataobj.grade==''}}" placeholder="还未填写"  class="text2"></input>
+            </view>
+  </view>
+  <view class="userinformation">
+          <view class="item">
+            <view class="itemdetail">喜欢:</view>
+          </view>
+          <view class="content1">
+            <input name="editlove" wx:if="{{dataobj.love!=''}}" value="{{dataobj.love}}" bindinput="inputlove" class="text3"></input>
+            <input name="editlove" wx:if="{{dataobj.love==''}}" placeholder="还未填写" bindinput="inputlove" class="text3"></input>
+          </view>
+  </view>
+  
+  <view class="text">
+  <view class="graylength" wx:if="{{lovelength<31}}">{{lovelength}}/30</view>
+  <view class="redlength" wx:if="{{lovelength>30}}">{{lovelength}}/30</view>
+  <view class="textmyword">我想说的话：</view>
+  <textarea name="content" wx:if="{{dataobj.message!=''}}" value="{{dataobj.message}}" class="textbox" maxlength="400" bindinput="textcheck"></textarea>
+  <textarea name="content" wx:if="{{dataobj.message==''}}" placeholder="我还没有留下想说的话" class="textbox" maxlength="400" bindinput="textcheck"></textarea>
+  </view>
+<view>
+  <view class="graylength" wx:if="{{messagelength<401}}">{{messagelength}}/400</view>
+  <view class="redlength" wx:if="{{messagelength>400}}">{{messagelength}}/400</view>
+  <!-- <button type="default" class="button" form-type="submit">确认</button> -->
+  
+<view class="wrapbutton">
+  <button plain type="default" class="button"form-type="submit">确认</button>
+</view>
+</view>
+
+</form>
+</view>
+</block>

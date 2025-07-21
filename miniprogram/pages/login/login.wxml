@@ -1,0 +1,31 @@
+<!-- 登陆页面 -->
+<view wx:if="{{haslog==false}}">
+<text decode="{{true}}">&nbsp;</text>
+
+<image src="{{poster}}" mode="widthFix" class="posterimage"></image>
+<form bindsubmit="btnSub">
+  <view data-weui-theme="{{theme}}">
+<!-- <text class="greeting" decode="{{true}}"> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 欢迎来到Kismet 如愿舞会，第一次登录小程序需要核实您的个人信息，未来将会自动登录哦！</text> -->
+<button class="avatar-wrapper" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    <view class="avatar_submit">轻触上传头像</view>
+  </button> 
+  <form catchsubmit="formSubmit">
+    <view class="row">
+      <view class="text1">昵称：</view>
+        <input type="nickname" class="weui-input" name="nickname" placeholder="请输入昵称"/>
+    </view>
+    <view class="row">
+      <view class="text1">用户名：</view>
+      <input name="userid" class="weui-input" placeholder="请输入姓名"></input>
+    </view>
+    <view class="row">
+      <view class="text1">密码：</view>
+      <input name="password" class="weui-input" placeholder="请输入密码（报名时填写的手机号）"></input>
+    </view>
+</form>
+</view>
+  <button type="default" plain form-type="submit" class="button" bindgetuserinfo="handleGetUserInfo">登录</button>
+</form>
+</view>
+<view wx:if="{{haslog==true}}" class="tips">识别到用户，页面跳转中</view>

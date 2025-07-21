@@ -1,0 +1,90 @@
+/* pages/login/login.wxss */
+button{
+  margin-top:100rpx;
+  width:100%;
+}
+.view-contain-ti {
+  height: 30px;
+  margin: 20px;
+  border-radius: 15rpx;
+}
+.input1 {
+  border-bottom: 1px solid gray;
+  margin:  auto 10px;
+  height: 30px;
+}
+.posterimage{
+  position: fixed;
+  top: -800rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.btn{
+  width: 100%;
+  background: none;
+}
+.btn image{
+  width: 100%;
+}
+.tips{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color:gray;
+  height:800rpx;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 100px !important;
+  margin-top: 100rpx;
+  margin-bottom: 60rpx;
+  border-radius: 8px;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.avatar {
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin-top: 10px;
+  object-fit: contain;
+}
+
+.container {
+  display: flex;
+}
+.row {
+  display: flex;
+  border-radius: 20rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10rpx 20rpx;
+  margin: 10rpx 10rpx;
+  box-sizing: border-box;
+}
+.text1{
+    flex: 2;
+}
+.weui-input{
+    flex: 6;
+    font-size: 32rpx;
+}
+.avatar_submit{
+  color:grey;
+  font-size:20rpx;
+}
+.greeting{
+  color:silver;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.button{
+  background-color:#78161E !important;
+  color:snow !important;
+  border-radius: 12rpx;
+  border-style:hidden !important;
+}

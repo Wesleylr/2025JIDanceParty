@@ -1,0 +1,103 @@
+<!-- 个人页面 -->
+<block wx:if="{{done==false}}">
+  <view class="loading-container">
+    <image class="loading-gif" src="../../icons/spinner.gif" mode="aspectFit"/>
+  </view>
+</block>
+<block wx:if="{{done==true}}">
+  <image class="background-image" src="../../icons/background_mine.jpg" mode="aspectFill"></image>
+<view class="all" >
+  <button class="buttoninvite" bindtap="toinvitation">邀请函</button>
+<view class="top">
+        <view class="topshowimage">
+          <image class="user_icon" src="{{dataobj.image}}"></image>
+        </view>
+        <view class="topshowdetail">
+          <text decode="{{true}}">&nbsp;</text> 
+          <view class="user_info_nickname">{{dataobj.nickname}}</view>
+          <view class="user_info_phone">phone：{{dataobj.phone}}</view>
+          <view class="user_love" wx:if="{{dataobj.love!=''}}">我喜欢：{{dataobj.love}}</view> 
+          <view class="user_love2" wx:if="{{dataobj.love==''}}">我喜欢：还没想好，喜欢什么呢...</view> 
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+</view>
+
+<view class="user_detail">
+        <text decode="{{true}}">&nbsp;</text>
+        <view class="userinformation">
+            <view class="item">
+                 <view class="itemdetail">姓名:</view>
+            </view>
+            <view class="content">
+                 <view class="contentdetail"> {{dataobj.name}}</view>
+            </view>
+        </view>    
+
+        <view class="userinformation">
+            <view class="item">
+                  <view class="itemdetail">性别:</view>
+            </view>
+            <view class="content">
+                  <view class="contentdetail">{{dataobj.gender}}</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+                 <view class="itemdetail">年级:</view>
+            </view>
+            <view class="content">
+                 <view class="contentdetail" wx:if="{{dataobj.grade!=''}}">{{dataobj.grade}}</view>
+                 <view class="contentdetail2" wx:if="{{dataobj.grade==''}}">还未填写</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+              <view class="itemdetail">学校:</view>
+            </view>
+            <view class="content">
+              <view class="contentdetail">{{dataobj.school}}</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+                <view class="itemdetail">舞伴:</view>
+            </view>
+            <view class="content">
+                <view class="contentdetail"> {{dataobj.mypartner}}</view>
+            </view>
+        </view>
+        <text decode="{{true}}">&nbsp;</text>
+</view>
+<block wx:if="{{dataobj.hasPartner==true}}">
+<view class="first_tab">
+     <navigator class="dancers" url="../../pages/partner/partner?personid={{partnerobj._openid}}" open-type="navigate">
+        <view class="dancerImage">
+          <image mode="heightFix" class="user_icon2" src="{{partnerobj.image}}"></image>
+        </view>
+        <view class="dancerInfo">
+          <text decode="{{true}}">&nbsp;</text>
+          <view class="dancerName">姓名：{{partnerobj.name}}</view>
+          <view class="dancerGender">性别：{{partnerobj.gender}}</view>
+          <view class="dancerSchool">学校学院：{{partnerobj.school}}</view>
+          <view class="dancerMsg" wx:if="{{partnerobj.love!=''}}">Ta喜欢：{{partnerobj.love}}</view>
+          <view class="dancerMsg2" wx:if="{{partnerobj.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+     </navigator>
+  </view>
+</block>
+
+<view>
+    <view class="myword">我的个性名片：</view>
+    <view class="message">{{dataobj.message ? dataobj.message : "我还没有留下想说的话"}}</view>
+    
+</view>
+
+<view class="wrapbutton">
+  <button plain type="default" class="button" bindtap="edit">启用编辑</button>
+</view>
+</view>
+</block>

@@ -1,0 +1,5 @@
+<!-- 邀请函的页面 -->
+<image src="{{imageUrl}}" mode='widthFix' class="image"></image>
+<view class="namecontainer"> {{name}} </view>
+
+

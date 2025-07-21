@@ -1,0 +1,43 @@
+<!-- 邀请页面 -->
+<block wx:if="{{done==false}}">
+  <view class="loading-container">
+    <image class="loading-gif" src="../../icons/spinner.gif" mode="aspectFit" />
+  </view>
+</block>
+<block wx:if="{{done==true}}">
+  <image class="background-image" src="../../icons/background.jpg" mode="aspectFill"></image>
+  <block wx:if="{{number!=0}}">
+    <view wx:for="{{dataobj}}" wx:key="_openid">
+      <view class="page-container">
+        <scroll-view class="scroll-container">
+          <view class="first_tab">
+            <navigator url="../../pages/check/check?personid={{item.Receiver._openid}}" open-type="navigate">
+              <view class="dancers">
+                <view class="dancerImage">
+                  <image mode="heightFix" class="user_icon" src="{{item.Receiver.image}}"></image>
+                </view>
+                <view class="dancerInfo">
+                  <text decode="{{true}}">&nbsp;</text>
+                  <view class="dancerName">姓名：{{item.Receiver.name}}</view>
+                  <view class="dancerGender">性别：{{item.Receiver.gender}}</view>
+                  <view class="dancerSchool">学校学院：{{item.Receiver.school}}</view>
+                  <view class="dancerMsg" wx:if="{{item.Receiver.love!=''}}">Ta喜欢：{{item.Receiver.love}}</view>
+                  <view class="dancerMsg2" wx:if="{{item.Receiver.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+                </view>
+              </view>
+              <image src="../../icons/corner.png" class="corner" />
+              <view class="time">{{item.Invitation.time}}</view>
+            </navigator>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="backgroundImage"/>
+    </view>
+
+
+  </block>
+  <block wx:if="{{number==0}}">
+    <view class="tips">空空如也</view>
+    <view class="backgroundImage"/>
+  </block>
+</block>

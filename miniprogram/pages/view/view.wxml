@@ -1,0 +1,78 @@
+<block wx:if="{{done==false}}">
+  <view class="loading-container">
+    <image class="loading-gif" src="../../icons/spinner.gif" mode="aspectFit"/>
+  </view>
+</block>
+<block wx:if="{{done==true}}">
+<view class="all" >
+<view class="top">
+        <view class="topshowimage">
+          <image class="user_icon" src="{{dataobj.image}}"></image>
+        </view>
+        <view class="topshowdetail">
+          <text decode="{{true}}">&nbsp;</text> 
+          <view class="user_info_nickname">{{dataobj.nickname}}</view>
+          <view class="user_love" wx:if="{{dataobj.love!=''}}">Ta喜欢：{{dataobj.love}}</view> 
+          <view class="user_love2" wx:if="{{dataobj.love==''}}">Ta喜欢：还没想好，喜欢什么呢...</view> 
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+</view>
+<view class="user_detail">
+        <text decode="{{true}}">&nbsp;</text>
+        <view class="userinformation">
+            <view class="item">
+                 <view class="itemdetail">姓名:</view>
+            </view>
+            <view class="content">
+                 <view class="contentdetail"> {{dataobj.name}}</view>
+            </view>
+        </view>    
+
+        <view class="userinformation">
+            <view class="item">
+                  <view class="itemdetail">性别:</view>
+            </view>
+            <view class="content">
+                  <view class="contentdetail">{{dataobj.gender}}</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+                 <view class="itemdetail">年级:</view>
+            </view>
+            <view class="content">
+                 <view class="contentdetail" wx:if="{{dataobj.grade!=''}}">{{dataobj.grade}}</view>
+                 <view class="contentdetail2" wx:if="{{dataobj.grade==''}}">Ta还没有透露呢</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+              <view class="itemdetail">学院:</view>
+            </view>
+            <view class="content">
+              <view class="contentdetail">{{dataobj.school}}</view>
+            </view>
+        </view>
+
+        <text decode="{{true}}">&nbsp;</text>
+</view>
+
+<modal hidden="{{hiddenmodalput}}" title="请写下你的留言" 
+   			confirm-text="邀请" cancel-text="取消" bindcancel="modalcancel" bindconfirm="modalconfirm"> 
+     <textarea name="invitemsg" placeholder="请输入内容" bindinput="searchinput" maxlength="300" class="textbox"></textarea>
+     <view class="wordcount">{{wordcount}}/300</view>
+</modal>
+
+<view>
+    <view class="myword">Ta的个性名片：</view>
+    <view class="message" wx:if="{{dataobj.message!=''}}">{{dataobj.message}}</view>
+    <view class="message2" wx:if="{{dataobj.message==''}}">这个人很懒，什么也没有留下</view>
+</view>
+
+<view class="wrapbutton">
+  <button plain type="default" class="button" bindtap="invite">邀请Ta</button>
+</view>
+</view>
+</block>

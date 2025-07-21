@@ -1,0 +1,14 @@
+.image{
+  width:100%;
+  position: absolute;
+  top:0%
+}
+.namecontainer{
+  position:relative;
+  top:574rpx;
+  left:326rpx;
+  font-size: 36rpx;
+  font-family: cursive;
+  color: #ffffff;
+  display:flex;
+}

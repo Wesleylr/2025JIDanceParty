@@ -1,0 +1,71 @@
+<!-- 这个页面是：在邀请中查看自己发出的邀请时看到的 -->
+<view class="all" >
+<view class="top">
+        <view class="topshowimage">
+          <image class="user_icon" src="{{dataobj.image}}"></image>
+        </view>
+        <view class="topshowdetail">
+          <text decode="{{true}}">&nbsp;</text> 
+          <view class="user_info_nickname">{{dataobj.nickname}}</view>
+          <view class="user_love" wx:if="{{dataobj.love!=''}}">Ta喜欢：{{dataobj.love}}</view> 
+          <view class="user_love2" wx:if="{{dataobj.love==''}}">Ta喜欢：还没想好，喜欢什么呢...</view> 
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+</view>
+<view class="user_detail">
+        <text decode="{{true}}">&nbsp;</text>
+        <view class="userinformation">
+            <view class="item">
+                 <view class="itemdetail">姓名:</view>
+            </view>
+            <view class="content">
+                 <view class="contentdetail"> {{dataobj.name}}</view>
+            </view>
+        </view>    
+
+        <view class="userinformation">
+            <view class="item">
+                  <view class="itemdetail">性别:</view>
+            </view>
+            <view class="content">
+                  <view class="contentdetail">{{dataobj.gender}}</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+                 <view class="itemdetail">年级:</view>
+            </view>
+            <view class="content">
+                 <view class="contentdetail" wx:if="{{dataobj.grade!=''}}">{{dataobj.grade}}</view>
+                 <view class="contentdetail2" wx:if="{{dataobj.grade==''}}">Ta还没有透露呢</view>
+            </view>
+        </view>
+
+        <view class="userinformation">
+            <view class="item">
+              <view class="itemdetail">学院:</view>
+            </view>
+            <view class="content">
+              <view class="contentdetail">{{dataobj.school}}</view>
+            </view>
+        </view>
+
+        <text decode="{{true}}">&nbsp;</text>
+</view>
+
+<modal hidden="{{hiddenmodalput}}" title="确认要撤销你的邀请吗" 
+   			confirm-text="确认" cancel-text="取消" bindcancel="modalcancel" bindconfirm="modalconfirm"> 
+</modal>
+
+<view>
+    <view class="myword">Ta的个性名片：</view>
+    <view class="message" wx:if="{{dataobj.message!=''}}">{{dataobj.message}}</view>
+    <view class="message2" wx:if="{{dataobj.message==''}}">这个人很懒，什么也没有留下</view>
+</view>
+
+<view class="wrapbutton">
+  <button plain type="default" class="button" bindtap="invite">撤销邀请</button>
+</view>
+</view>
+

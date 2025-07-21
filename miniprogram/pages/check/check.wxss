@@ -1,0 +1,97 @@
+/* pages/mine/mine.wxss */
+.all{
+  display:flex;
+  flex-direction:column;
+}
+.top{
+  display:flex;
+  margin: 30rpx;
+}
+.topshowimage{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topshowdetail{
+  flex:3;
+}
+.user_icon{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+.user_info_nickname{
+  font-size: 32rpx;
+}
+.user_info_phone{
+  font-size: 32rpx;
+}
+.user_love{
+  font-size: 32rpx;
+  word-wrap: break-word;
+}
+.user_love2{
+  font-size: 32rpx;
+  word-wrap: break-word;
+  color:gray;
+}
+.user_detail{
+  border-top: 5rpx solid #ccc;
+  border-bottom: 5rpx solid #ccc;
+}
+.userinformation{
+  display:flex;
+  flex-direction: row;
+}
+.item{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content{
+  flex:2;
+  display: flex;
+}
+.itemdetail{
+  font-size: 32rpx;
+}
+.contentdetail{
+  font-size: 32rpx;
+}
+.contentdetail2{
+  font-size: 32rpx;
+  color:gray;
+}
+.myword{
+  margin:30rpx;
+}
+.message{
+  border: 5rpx solid #78161E;
+  border-radius: 15rpx;
+  margin: 30rpx;
+  padding:8rpx;
+  width:665rpx;
+  min-height: 320rpx;
+  height:auto !important;
+  font-size: 27rpx;
+}
+.message2{
+  border: 5rpx solid #78161E;
+  border-radius: 15rpx;
+  margin: 30rpx;
+  padding:8rpx;
+  width:665rpx;
+  min-height: 320rpx;
+  height:auto !important;
+  font-size: 27rpx;
+  color:gray;
+}
+.button{
+  margin:20rpx;
+  background-color:red !important;
+  color:snow !important;
+  border-radius: 10rpx;
+  border-style:hidden !important;
+}

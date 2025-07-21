@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/test/test",
+   
+
+    "pages/email/email",
+    "pages/invitation/invitation",
+    "pages/invite/invite",
+    "pages/mine/mine",
+    "pages/edit/edit",
+    "pages/home/home",
+    "pages/search/search",
+    "pages/view/view",
+    "pages/check/check",
+    "pages/respond/respond",
+    "pages/partner/partner"
+  ],
+  "window": {
+    "backgroundColor": "#060401",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#78161E",
+    "navigationBarTitleText": "STARLET 百老汇之夜",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "home",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home.png"
+      },
+      {
+        "pagePath": "pages/invite/invite",
+        "text": "invite",
+        "iconPath": "icons/invite.png",
+        "selectedIconPath": "icons/invite.png"
+      },
+      {
+        "pagePath": "pages/email/email",
+        "text": "inbox",
+        "iconPath": "icons/mail.png",
+        "selectedIconPath": "icons/mail.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "mine",
+        "iconPath": "icons/mine.png",
+        "selectedIconPath": "icons/mine.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+
+  "lazyCodeLoading": "requiredComponents"
+}

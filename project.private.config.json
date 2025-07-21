@@ -1,0 +1,105 @@
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "partner",
+          "pathName": "pages/partner/partner",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "respond",
+          "pathName": "pages/respond/respond",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "check",
+          "pathName": "pages/check/check",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "view",
+          "pathName": "pages/view/view",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "edit",
+          "pathName": "pages/edit/edit",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "invite",
+          "pathName": "pages/invite/invite",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "invitation",
+          "pathName": "pages/invitation/invitation",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "email",
+          "pathName": "pages/email/email",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "STARLET2025",
+  "libVersion": "2.14.1"
+}

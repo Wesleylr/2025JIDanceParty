@@ -1,0 +1,56 @@
+<!-- 在首页点入搜索页面 -->
+<view class="page-container">
+<view class="search_row">
+  <button class="button" bindtap="search">
+  <image src="../../icons/search.png" mode="aspectFit"/></button>
+  <input placeholder="请输入您要搜索的用户"  bindinput="searchinput"></input>
+</view>
+<scroll-view class="scroll-container" scroll-y="true" style="height: 100vh;">
+<view wx:if="{{hasSearched==true}}">
+<view wx:if="{{dataobj.length!=0}}">
+<view wx:for="{{dataobj}}" wx:key="_openid">
+  <view class="first_tab" wx:if="{{item.hasPartner==false}}">
+     <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+        <view class="dancerImage">
+          <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+          <view class="noPartner">暂无舞伴</view>
+
+        </view>
+        <view class="dancerInfo">
+          <text decode="{{true}}">&nbsp;</text>
+          <view class="dancerName">姓名：{{item.name}}</view>
+          <view class="dancerGender">性别：{{item.gender}}</view>
+          <view class="dancerSchool">学校学院：{{item.school}}</view>
+          <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+          <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+        <image src="../../icons/corner.png" class="corner"/>
+     </navigator>
+  </view>
+  <view class="first_tab" wx:if="{{item.hasPartner==true}}">
+     <navigator class="dancers" url="../../pages/view/view?personid={{item._openid}}" open-type="navigate">
+        <view class="dancerImage">
+          <image mode="heightFix" class="user_icon" src="{{item.image}}"></image>
+          <view class="hasPartner">已有舞伴</view>
+        </view>
+        <view class="dancerInfo">
+          <text decode="{{true}}">&nbsp;</text>
+          <view class="dancerName">姓名：{{item.name}}</view>
+          <view class="dancerGender">性别：{{item.gender}}</view>
+          <view class="dancerSchool">学校学院：{{item.school}}</view>
+          <view class="dancerMsg" wx:if="{{item.love!=''}}">Ta喜欢：{{item.love}}</view>
+          <view class="dancerMsg2" wx:if="{{item.love==''}}">Ta喜欢: 还没想好，喜欢什么呢...</view>
+          <text decode="{{true}}">&nbsp;</text>
+        </view>
+        <image src="../../icons/corner.png" class="corner"/>
+     </navigator>
+     </view>
+  </view>
+ </view>
+ <view wx:if="{{dataobj.length==0}}" class="tips">未搜索到可匹配的用户</view>
+  </view>
+</scroll-view>
+<view class="backgroundImage"></view>
+</view>
+  
